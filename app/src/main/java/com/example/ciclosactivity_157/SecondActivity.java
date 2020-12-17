@@ -26,6 +26,7 @@ public class SecondActivity extends AppCompatActivity {
                 String url = "https://www.geolay.cl";
                 mIntent.setData(Uri.parse(url));
                 startActivity(mIntent);
+
             }
         });
     }
