@@ -2,8 +2,12 @@ package com.example.ciclosactivity_157;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
@@ -14,6 +18,16 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        Button mbutton = findViewById(R.id.button_second);
+        mbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(Intent.ACTION_VIEW );
+                String url = "https://www.geolay.cl";
+                mIntent.setData(Uri.parse(url));
+                startActivity(mIntent);
+            }
+        });
     }
 
     @Override
